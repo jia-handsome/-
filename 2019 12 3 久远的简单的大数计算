@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+ int i,m,j,n,num=0,a[1000]= {0},temp=0,s[1000]= {0},o,r,sb=0,fun,q=0;
+ scanf("%d",&n);
+ a[1]=1;
+ for(m=1; m<=n; m++)
+  {
+   for(i=m; i<=m; i++) //求每个的阶乘。
+    {
+     for(j=1; j<=100; j++)
+      {
+       temp=a[j]*i+num;
+       a[j]=temp%10;
+       num=temp/10;
+      }
+    }
+   num=0;
+   //来使阶乘们一个一个加起来
+   for(o=1; o<=100; o++)
+    {
+     fun=a[o]+s[o]+sb;
+     s[o]=fun%10;
+     sb=fun/10;
+    }
+   sb=0;
+  }
+ for(r=100; r>=1; r--)
+  {
+   if(a[r]!=0)
+     q=1;
+    if(q==1)
+    printf("%d",s[r]);
+  }
+ return 0;
+}
