@@ -1,0 +1,37 @@
+# -
+2020 6 22
+#include<iostream>
+using namespace std;
+int i,j;
+void sift(int r[],ing k,int m)
+{
+i=k；j=2*k;
+while(j<=m)
+{
+if(j<m&&r[j]<r[j+1]) j++;
+if(r[i]>r[j]) break;
+else
+{
+int temp;
+temp=r[j];
+r[j]=r[i];
+r[i]=temp;
+i=j;j=2*i;
+}
+}
+}
+void heapsort(int r[],int n)
+{
+for(i=n/2;i>=1;i--)
+sift(r,i,n);
+for(i=1;i<n;i++){
+int temp;
+temp=r[n-i+1];
+r[n-i+1]=r[1];
+r[1]=temp;
+sift(r,1,n-i);}
+}
+int main(){
+
+return 0 ;
+}
