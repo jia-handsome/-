@@ -1,0 +1,11 @@
+# -
+2020 6 22
+#incldue<iostream>
+using namespace std;
+void merge(int r[],int r1[],int s,int m,int t)
+{
+i=s;
+}
+int main(){
+return 0;
+}
