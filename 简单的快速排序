@@ -1,0 +1,41 @@
+# -
+2020 6 22
+#include<iostream>
+using nameapace std;
+int partition(int r[],int first,int end)
+{
+i=first;j=end;
+while(i<j)
+{
+while(i<j&&r[i]<=r[j]) j--;
+if(i<j)
+{
+int temp;
+temp=r[j];
+r[j]=r[i];
+r[i]=temp;
+i++
+}
+while(i<j&&r[i]<=r[j]) i++;
+if(i<j)
+{
+temp=r[j];
+r[j]=r[i];
+r[i]=temp;
+j--;
+}
+}
+return i;
+}
+void quicksort(int r[],int first,int end)
+{
+if(first<end)
+{
+pivot=partition(r,first,end);
+quicksort(r,first,pivot-1);
+quicksort(r,pivot+1,end);
+}
+}
+int main(){
+return 0;
+}
